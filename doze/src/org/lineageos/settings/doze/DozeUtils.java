@@ -58,7 +58,7 @@ public final class DozeUtils {
     }
 
     public static void checkDozeService(Context context) {
-        if (isDozeEnabled(context) && !isAlwaysOnEnabled(context) && sensorsEnabled(context)) {
+        if (isDozeEnabled(context) && sensorsEnabled(context)) {
             startService(context);
         } else {
             stopService(context);
@@ -121,7 +121,7 @@ public final class DozeUtils {
     }
 
     public static boolean sensorsEnabled(Context context) {
-        return isPickUpEnabled(context) || isPocketGestureEnabled(context);
+        return isPickUpEnabled(context) || isPocketGestureEnabled(context) || isSmartWakeEnabled(context);
     }
 
     protected static Sensor getSensor(SensorManager sm, String type) {

@@ -103,11 +103,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         if (!DozeUtils.alwaysOnDisplayAvailable(getActivity())) {
             getPreferenceScreen().removePreference(mAlwaysOnDisplayPreference);
         } else {
-            mPickUpPreference.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
-            pickupSensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
-            proximitySensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
-            raiseToWakeGesture.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
-            mSmartWakePreference.setDependency(DozeUtils.GESTURE_PICK_UP_KEY);
+            mSmartWakePreference.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
         }
     }
 

@@ -96,7 +96,7 @@ public class DozeService extends Service {
         if (DozeUtils.isPickUpEnabled(this)) {
             mTiltSensor.enable();
         }
-        if (DozeUtils.isSmartWakeEnabled(this) && DozeUtils.isPickUpEnabled(this)) {
+        if (DozeUtils.isSmartWakeEnabled(this) && !DozeUtils.isAlwaysOnEnabled(this)) {
             mAmdSensor.enable();
         }
         if (DozeUtils.isPocketGestureEnabled(this)) {
